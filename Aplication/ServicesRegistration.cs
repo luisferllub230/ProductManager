@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Aplication.Services;
-using StockApp.Core.Application.Interfaces.Services.IProduct;
+using StockApp.Core.Application.Interfaces.Services;
+using StockApp.Core.Application.Services;
 
 namespace StockApp.Infraestructure.persistence
 {
@@ -12,6 +13,7 @@ namespace StockApp.Infraestructure.persistence
 
             #region repositories
             service.AddTransient<IProductServices, ProductServices>();
+            service.AddTransient<ICategoryServices, CategoryServices>();
             #endregion
         }
     }
