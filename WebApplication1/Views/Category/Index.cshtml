@@ -1,0 +1,38 @@
+﻿@using StockApp.Core.Application.ViewModel.Categories;
+@model List<StockApp.Core.Application.ViewModel.Categories.CategoryViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mb-5 mt-2 d-flex flex-row-reverse">
+    <a asp-controller="" asp-action="" class="btn btn-outline-success">create new category</a>
+</div>
+@if (Model.Count == null || Model.Count == 0)
+{
+    <h2>
+        there arent Categories
+    </h2>
+}
+else
+{
+
+    <div class="row">
+        @foreach (CategoryViewModel i in Model)
+        {
+
+            <div class="card bg-dark border border-5 border-primary col-12 col-md-4 mx-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@i.categoryName</h5>
+                    <p class="card-text">@i.categoryDescription</p>
+                    <span class=""> @i.productsCount</span>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <a class="btn btn-outline-warning " asp-controller="" asp-action="" asp-route-id="@i.id">edit</a>
+                        <a class="btn btn-outline-danger " asp-controller="" asp-action="" asp-route-id="@i.id">delete</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+}
