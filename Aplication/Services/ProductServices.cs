@@ -1,5 +1,5 @@
-﻿using StockApp.Core.Application.Interfaces.Repositories.IProduct;
-using StockApp.Core.Application.Interfaces.Services.IProduct;
+﻿using StockApp.Core.Application.Interfaces.Repositories;
+using StockApp.Core.Application.Interfaces.Services;
 using StockApp.Core.Application.ViewModel.Products;
 using StockApp.Core.Domain.Entities;
 

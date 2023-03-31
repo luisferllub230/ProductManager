@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StockApp.Core.Application.Interfaces.Services.IProduct;
+using StockApp.Core.Application.Interfaces.Services;
 using StockApp.Core.Application.ViewModel.Products;
 
 

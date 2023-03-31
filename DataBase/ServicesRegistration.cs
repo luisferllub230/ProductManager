@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using StockApp.Infraestructure.persistence.Context;
 using Aplication.Repository;
-using StockApp.Core.Application.Interfaces.Repositories.IProduct;
+using StockApp.Core.Application.Interfaces.Repositories;
+using StockApp.Infraestructure.persistence.Repositories;
 
 namespace StockApp.Infraestructure.persistence
 {
@@ -27,7 +28,9 @@ namespace StockApp.Infraestructure.persistence
 
 
             #region repositories
+            service.AddTransient(typeof(IGeneryRepository<>), typeof(GeneryRepository<>));
             service.AddTransient<IProductRepository, ProductRepository>();
+            service.AddTransient<ICategoryRepository, CategoryRepository>();
             #endregion
 
 
